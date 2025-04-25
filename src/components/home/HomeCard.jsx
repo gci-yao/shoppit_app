@@ -9,7 +9,7 @@ const HomeCard = ({product}) => {
     <Link to={`/products/${product.slug}`} className={styles.link}>
     <div className={styles.card}>
         <div className={styles.cardImgWrapper}>
-            <img src={`${BASE_URL}${product.image}`} alt="Product Image" 
+            <img src={`% static${BASE_URL}${product.image}%`} alt="Product Image" 
             className={styles.cardImgTop}
             />
         </div>
