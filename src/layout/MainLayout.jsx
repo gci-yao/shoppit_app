@@ -1,11 +1,14 @@
 import NavBar from '../components/ui/NavBar'
 import Footer from '../components/ui/Footer'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/ReactToastify.css'
 import {Outlet }from 'react-router-dom'
 
-const MainLayout = () => {
+const MainLayout = ({numCartItems}) => {
   return (
     <>
-        <NavBar />
+        <NavBar numCartItems={numCartItems}/>
+        <ToastContainer />
         <Outlet />
         <Footer />
     </>
