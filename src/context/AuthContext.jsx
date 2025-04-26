@@ -29,7 +29,7 @@ export function AuthProvider({children}){
 
 
     function get_username(){
-        api.get("get_username")
+        api.get("/get_username")
         .then(res =>{
             setUsername(res.data.username)
         })
@@ -38,11 +38,16 @@ export function AuthProvider({children}){
         })
     }
 
-    useEffect(function(){
-        handleAuth()
-        get_username()
-    },[])
-
+    useEffect(() => {
+        handleAuth();
+    }, []);
+    
+    useEffect(() => {
+        if (isAuthenticated) {
+            get_username();
+        }
+    }, [isAuthenticated]);
+    
     const authValue = {isAuthenticated,setUsername, username, setIsAuthenticated, get_username}
 
     return <AuthContext.Provider value={authValue}>
