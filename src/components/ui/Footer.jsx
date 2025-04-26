@@ -16,10 +16,14 @@ const Footer = () => {
             <a href="#" className="text-white text-decoration-none mx-2"><FaFacebook /></a>
             <a href="#" className="text-white text-decoration-none mx-2"><FaTwitter /></a>
             <a href="#" className="text-white text-decoration-none mx-2"><FaInstagram /></a>
-            <a href="#" className="text-white text-decoration-none mx-2"><FaWhatsapp /></a>
+            <a className="text-white text-decoration-none mx-2"
+            href="https://wa.me/88650842" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            ><FaWhatsapp /></a>
             <a href="#" className="text-white text-decoration-none mx-2"><FaTiktok /></a>
         </div>
-        <p className="small sm-0 ">&copy; 2025 shoppit reserved all droits from charles</p>
+        <p className="small sm-0 ">&copy; shoppit all droits reserved charles.yao.ci 2025</p>
     </div>    
     </footer>
   )
