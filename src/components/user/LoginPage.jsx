@@ -84,8 +84,8 @@ const LoginPage = () => {
           <button type="submit" className="login-btn w-100" disabled={loading}>Login</button>
         </form>
         <div className="login-footer">
-          <p><a href="#" className="footer-link">Forgot password?</a></p>
-          <p>Don't have an account? <a href="#" className="footer-link">Sign up</a></p>
+          <p><a href="/register" className="footer-link">Forgot password?</a></p>
+          <p>Don't have an account? <a href="/register" className="footer-link">Sign up</a></p>
         </div>
       </div>
     </div>

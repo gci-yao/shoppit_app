@@ -14,6 +14,7 @@ import ProtectedRoute from './components/ui/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import UserProfilePage from './components/user/UserProfilePage';
 import PaymentStatusPage from './components/payment/PaymentStatusPage';
+import RegisterPage from './components/user/RegisterPage';
 
 
 
@@ -23,7 +24,7 @@ const App = () => {
 
   useEffect(function(){
     if(cart_code){
-      api.get(`get_cart_stat/?cart_code=${cart_code}`)
+      api.get(`get_cart_stat?cart_code=${cart_code}`)
       .then(res =>{
         console.log(res.data)
         setNumberCartItems(res.data.num_of_items)
@@ -50,6 +51,7 @@ const App = () => {
           <CheckoutPage />
         </ProtectedRoute>} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage/>} />
       <Route path="profile" element={<UserProfilePage />} />
       <Route path="*" element={<NotFoundPage  />} />
       <Route path="payment-status" element={<PaymentStatusPage setNumberCartItems={setNumberCartItems} />} />
