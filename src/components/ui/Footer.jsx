@@ -17,7 +17,7 @@ const Footer = () => {
             <a href="#" className="text-white text-decoration-none mx-2"><FaTwitter /></a>
             <a href="#" className="text-white text-decoration-none mx-2"><FaInstagram /></a>
             <a className="text-white text-decoration-none mx-2"
-            href="https://wa.me/+22588650842" 
+            href="https://wa.me/88650842" 
             target="_blank" 
            
             ><FaWhatsapp /></a>

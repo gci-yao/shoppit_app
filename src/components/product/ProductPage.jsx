@@ -85,7 +85,7 @@ const ProductPage = ({setNumCartItems}) => {
                         <h1 className="display-5 fw-bolder">{product.name}</h1>
                         <div className="fs-5 mb-5">
                             {/* <span className="text-decoration-line-through">$45.00</span> */}
-                            <span className="text-decoration-none">{`${product.price} Fcfa`}</span>
+                            <span className="text-decoration">{`${product.price} Fcfa`}</span>
                         </div>
                         <p className="lead">
                             {product.description}

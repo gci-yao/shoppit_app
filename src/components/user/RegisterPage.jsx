@@ -28,29 +28,35 @@ const RegisterPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    api.post("/admin/core/customuser/", formData)
-      .then(res => {
-        console.log(res.data);
-        setLoading(false);
-        navigate("/login"); // Redirige vers login après enregistrement
-      })
-      .catch(err => {
-        console.log(err.message);
-        setError(err.message);
-        setLoading(false);
-      });
+  api.post("register_user/", formData)
+    .then(res => {
+      console.log(res.data);
+      const { access, refresh } = res.data.token;
+
+      // Stocke les tokens dans le localStorage par exemple
+      localStorage.setItem('access_token', access);
+      localStorage.setItem('refresh_token', refresh);
+
+      setLoading(false);
+      navigate("/login"); // Par exemple après login auto
+    })
+    .catch(err => {
+      console.log(err.message);
+      setError(err.message);
+      setLoading(false);
+    });
   }
 
   return (
     <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
       <div className="card p-4 shadow" style={{ width: "100%", maxWidth: "500px" }}>
-        <h2 className="text-center mb-4">Créer un compte</h2>
+        <h2 className="text-center mb-4">Create your account</h2>
 
         {error && <div className="alert alert-danger">{error}</div>}
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Nom d'utilisateur</label>
+            <label className="form-label">Username</label>
             <input 
               type="text" 
               className="form-control" 
@@ -74,7 +80,7 @@ const RegisterPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Mot de passe</label>
+            <label className="form-label">Password</label>
             <input 
               type="password" 
               className="form-control" 
@@ -86,7 +92,7 @@ const RegisterPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Prénom</label>
+            <label className="form-label">Firtsname</label>
             <input 
               type="text" 
               className="form-control" 
@@ -97,7 +103,7 @@ const RegisterPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Nom</label>
+            <label className="form-label">Lastname</label>
             <input 
               type="text" 
               className="form-control" 
@@ -108,7 +114,7 @@ const RegisterPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Téléphone</label>
+            <label className="form-label">Phone Number</label>
             <input 
               type="text" 
               className="form-control" 
@@ -119,7 +125,7 @@ const RegisterPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Ville</label>
+            <label className="form-label">City</label>
             <input 
               type="text" 
               className="form-control" 
@@ -130,7 +136,7 @@ const RegisterPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Pays</label>
+            <label className="form-label">Conutry</label>
             <input 
               type="text" 
               className="form-control" 
@@ -141,12 +147,12 @@ const RegisterPage = () => {
           </div>
 
           <button type="submit" className="btn btn-primary w-100" disabled={loading}>
-            {loading ? "Création..." : "Créer un compte"}
+            {loading ? "Création..." : "Create your account"}
           </button>
         </form>
 
         <div className="text-center mt-3">
-          <p>Déjà inscrit ? <a href="/login">Connecte-toi</a></p>
+          <p>Already registered ? <a href="/login">Login you</a></p>
         </div>
       </div>
     </div>

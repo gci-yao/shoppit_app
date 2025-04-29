@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from './UserInfo.module.css'
 import pic from "../../assets/pic.png"
+import { useNavigate } from 'react-router-dom'
 
 const UserInfo = ({userinfo}) => {
+    const navigate = useNavigate();
   return (
     <div className="row mb-4">
         <div className={`col-md-3 py-3 card ${styles.textCenter}`}>
@@ -13,7 +15,7 @@ const UserInfo = ({userinfo}) => {
             />
             <h4>{userinfo.username}</h4>
             <p className="text-muted">{userinfo.email}</p>
-            <button className="btn mt-2" style={{backgroundColor:'#6050DC', color:'white'}}>Edit Profile</button>
+            <button onClick={() => navigate("/edit-profile")} className="btn mt-2" style={{backgroundColor:'#6050DC', color:'white'}}>Edit Profile</button>
         </div>
         <div className="col-md-9">
             <div className="card">

@@ -15,6 +15,7 @@ import { AuthProvider } from './context/AuthContext';
 import UserProfilePage from './components/user/UserProfilePage';
 import PaymentStatusPage from './components/payment/PaymentStatusPage';
 import RegisterPage from './components/user/RegisterPage';
+import EditProfilePage from './components/user/EditProfilePage';
 
 
 
@@ -54,6 +55,7 @@ const App = () => {
       <Route path="/register" element={<RegisterPage/>} />
       <Route path="profile" element={<UserProfilePage />} />
       <Route path="*" element={<NotFoundPage  />} />
+      <Route path="/edit-profile" element={<EditProfilePage  />} />
       <Route path="payment-status" element={<PaymentStatusPage setNumberCartItems={setNumberCartItems} />} />
       </Route>
     </Routes>
