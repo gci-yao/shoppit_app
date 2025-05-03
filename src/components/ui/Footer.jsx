@@ -8,7 +8,7 @@ const Footer = () => {
 
         <div className="mb-2">
             <a href="#" className="text-white text-decoration-none mx-2">Home</a>
-            <a href="#" className="text-white text-decoration-none mx-2">About</a>
+            <a href="https://apropos.onrender.com/" className="text-white text-decoration-none mx-2">About</a>
             <a href="#" className="text-white text-decoration-none mx-2">Shop</a>
             <a href="https://contact-wvsy.onrender.com" className="text-white text-decoration-none mx-2">Contact</a>
         </div>
