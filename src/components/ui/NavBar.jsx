@@ -19,19 +19,19 @@ const NavBar = ({numCartItems}) => {
         aria-label="Toggle navigation"
         >
           <span className="navbar-toggle-icon"><TfiLinux /></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarContent">
-          <NavBarLink />
           <Link to="/cart" className={`'btn btn-dark ms-5  rounded-pill position-relative ${styles.responsiveCart}'`}>
-            <FaCartShopping />
             {numCartItems == 0 || <span
               className="position-absolute top-0 start-100 translate-middle badge rounded-pill"
               style={{fontSize:'0.85rem', padding:'0.5em 0.65em',backgroundColor:'#6050DC'}}
             >
               {numCartItems}
             </span>}
+            <FaCartShopping />
             
           </Link>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarContent">
+          <NavBarLink />
         </div>
     </div>
     </nav>
