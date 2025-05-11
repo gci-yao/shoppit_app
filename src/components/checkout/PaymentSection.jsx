@@ -118,7 +118,7 @@ const PaymentSection = () => {
               }}
               style={{ cursor: "pointer", textDecoration: 'underline' }}
             >
-              <TfiLinux /> Copier le numéro Wave/OM
+              <TfiLinux /> Copier le numéro OM
             </p>
 
             <img
@@ -134,7 +134,7 @@ const PaymentSection = () => {
             />
 
             <p className="text-white mt-2">
-              <i className="fas fa-money-bill-wave"></i><a href="https://pay.wave.com/m/M_ci_rpkTnEMdLOa-/c/ci/"> Scanner le QR Code pour payer</a>
+              <i className="fas fa-money-bill-wave"></i><a href="https://pay.wave.com/m/M_ci_rpkTnEMdLOa-/c/ci/"> Scanner le QR Code ou clickez ici !</a>
             </p>
           </div>
 
