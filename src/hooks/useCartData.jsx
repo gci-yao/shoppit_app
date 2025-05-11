@@ -9,7 +9,7 @@ export default function useCartData(){
       const [cartItems, setCartItems] = useState([])
       const [cartTotal, setCartTotal] = useState(0.00)
       const [loading, setLoading] = useState(false)
-      const tax = 4.00
+      const tax = 100.00
     
       useEffect(function(){
         setLoading(true)

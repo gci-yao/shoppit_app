@@ -134,8 +134,31 @@ const PaymentSection = () => {
             />
 
             <p className="text-white mt-2">
-              <i className="fas fa-money-bill-wave"></i><a href="https://pay.wave.com/m/M_ci_rpkTnEMdLOa-/c/ci/"> Scanner le QR Code ou clickez ici !</a>
+              <i className="fas fa-money-bill-wave"></i>{' '}
+              <a
+                href={`https://pay.wave.com/m/M_ci_rpkTnEMdLOa-/c/ci/?ref=${cart_code}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white fw-bold"
+              >
+                Scanner le QR Code ou cliquez ici pour payer via Wave
+              </a>
             </p>
+            <button
+  onClick={async () => {
+    try {
+      await api.post('/payment-confirmation/', { cart_code });
+      toast.success("Merci ! Votre paiement est en cours de vérification.");
+    } catch (err) {
+      toast.error("Erreur lors de la confirmation. Réessayez ou contactez le support.");
+    }
+  }}
+  className="btn btn-success mt-3"
+>
+  ✅ J'ai effectué le paiement
+</button>
+
+
           </div>
 
         </div>
