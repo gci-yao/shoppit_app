@@ -9,7 +9,7 @@ const NavBar = ({numCartItems}) => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 ${styles.stickyNavbar}`}>
     <div className="container" >
-        <Link className="navbar-brand text-success fw-bold text-uppercase" to="/">SHOPPIT</Link>
+        <Link className="navbar-brand text-decoration-none text-success fw-bold text-uppercase" to="/">SHOPPIT</Link>
         <button
         className="navbar-toggle"
         type="button"

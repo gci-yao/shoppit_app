@@ -4,6 +4,10 @@ import api from '../../api';
 import Spinner from '../ui/Spinner';
 import { LuMicrowave } from "react-icons/lu";
 import { ImPaypal } from "react-icons/im";
+import waveQR from '../../assets/wave.jpg';
+import { TfiLinux } from "react-icons/tfi";
+import { toast } from 'react-toastify';
+import omwave from '../../assets/om&wave.jpeg';
 
 const PaymentSection = () => {
   const [cart_code, setCartCode] = useState(localStorage.getItem("cart_code") || "");
@@ -16,7 +20,6 @@ const PaymentSection = () => {
     }
   }, [cart_code]);
 
-  // Fonction pour récupérer dynamiquement une valeur depuis un objet selon un chemin 'a.b.c'
   const getValueByPath = (obj, path) => {
     return path.split('.').reduce((acc, part) => acc?.[part], obj);
   };
@@ -62,6 +65,7 @@ const PaymentSection = () => {
           <h5>Options de Paiement</h5>
         </div>
         <div className="card-body">
+
           {error && (
             <div className="alert alert-danger">
               {error}
@@ -76,29 +80,64 @@ const PaymentSection = () => {
             </div>
           )}
 
-          <button
-            onClick={() => handlePayment('/initiate_paypal_payment/', 'approval_url')}
-            className={`btn btn-primary w-100 mb-3 ${styles.paypalButton}`}
-            disabled={!cart_code}
-          >
-            <ImPaypal /> Payer avec PayPal
-          </button>
+          {/* SECTION WAVE + OM STYLÉE */}
+          <div
+            className="text-center mt-4 p-3 bg-info"
 
-          <button
-            onClick={() => handlePayment('/initiate_payment/', 'data.link')}
-            className={`btn btn-warning w-100 mb-3 ${styles.flutterwaveButton}`}
-            disabled={!cart_code}
+            style={{
+              backgroundColor: '#FFA711',
+              borderRadius: '15px',
+              boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            }}
           >
-            <LuMicrowave /> Payer avec Flutterwave
-          </button>
+            <h5 className="text-white mb-3">
+              <LuMicrowave /> <strong>Payer via Wave ou Orange Money</strong>
+            </h5>
 
-          <button
-            onClick={() => handlePayment('/initiate_paydunya_payment/', 'data.payment_url')}
-            className={`btn btn-success w-100 mb-3 ${styles.paydunyaButton}`}
-            disabled={!cart_code}
-          >
-            <LuMicrowave /> Payer avec Wave (PayDunya)
-          </button>
+            <div className="d-flex align-items-center justify-content-center mb-3">
+              <img
+                src={omwave}
+                alt="OM & Wave"
+                style={{
+                  width: '100px',
+                  height: '60px',
+                  borderRadius: '5px',
+                  marginRight: '10px',
+                  objectFit: 'cover',
+                  
+                }}
+              />
+              <span className="text-white fs-5"><strong>+225 0706836722</strong></span>
+            </div>
+
+            <p
+              className="text-secondary btn-sm mb-3"
+              onClick={() => {
+                navigator.clipboard.writeText('0706836722');
+                toast.success("Numéro copié avec succès ! Collez-le dans votre compte wave ou OM pour effectuer le paiement !");
+              }}
+              style={{ cursor: "pointer", textDecoration: 'underline' }}
+            >
+              <TfiLinux /> Copier le numéro Wave/OM
+            </p>
+
+            <img
+              src={waveQR}
+              alt="QR Code Wave"
+              style={{
+                width: "260px",
+                height: "285px",
+                borderRadius: "10px",
+                marginBottom: "10px",
+                
+              }}
+            />
+
+            <p className="text-white mt-2">
+              <i className="fas fa-money-bill-wave"></i><a href="https://pay.wave.com/m/M_ci_rpkTnEMdLOa-/c/ci/"> Scanner le QR Code pour payer</a>
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
