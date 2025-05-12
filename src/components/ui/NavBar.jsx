@@ -9,7 +9,7 @@ const NavBar = ({numCartItems}) => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 ${styles.stickyNavbar}`}>
     <div className="container " style={{marginRight:"20px"}} >
-        <Link className="navbar-brand text-decoration-none text-success fw-bold text-uppercase" to="/">SHOPPIT</Link>
+        <Link className="navbar-brand text-decoration-none text-primary fw-bold text-uppercase" to="/">BAFA SHOPPIT</Link>
         <div className="collapse navbar-collapse" id="navbarContent">
           <NavBarLink />
         </div>
