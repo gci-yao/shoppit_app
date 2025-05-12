@@ -16,11 +16,11 @@ const CartSummary = ({cartTotal, tax}) => {
                 <div className="d-flex justify-content-between">
                     
                     <span>SubTotal : </span>
-                    <span className='text-info text-bold'>{`${subTotal} Fcfa`}</span>
+                    <span className='text-dark text-bold'>{`${subTotal} Fcfa`}</span>
                 </div>
                 <div className="d-flex justify-content-between">
                     <span >Tax : </span>
-                    <span className='text-info'>{`${cartTax} Fcfa`}</span>
+                    <span className='text-danger'>{`${cartTax} Fcfa`}</span>
                 </div>
                 <div className="d-flex justify-content-between mb-3">
                     <span>Total to pay : </span>

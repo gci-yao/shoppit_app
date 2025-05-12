@@ -114,7 +114,7 @@ const PaymentSection = () => {
               className="text-secondary btn-sm mb-3"
               onClick={() => {
                 navigator.clipboard.writeText('0706836722');
-                toast.success("Numéro copié avec succès ! Collez-le dans votre compte wave ou OM pour effectuer le paiement !");
+                toast.success("Numéro copié avec succès ! Collez-le dans votre compte OM pour effectuer le paiement !");
               }}
               style={{ cursor: "pointer", textDecoration: 'underline' }}
             >

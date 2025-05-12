@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import api, { BASE_URL } from '../../api'
 import { BsTranslate } from 'react-icons/bs'
 import { toast } from 'react-toastify'
+import { TbShoppingBagEdit } from "react-icons/tb";
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 const CartItem = ({item, setCartTotal,setCartItems, cartitems, setNumCartItems}) => {
 
@@ -83,9 +85,9 @@ const CartItem = ({item, setCartTotal,setCartItems, cartitems, setNumCartItems})
                 <button
                 onClick={updateCartItem}  disabled={loading}
                 className="btn btn-sm mx-2" style={{backgroundColor:"#4b3bcb", color:"white", maxWidth:"50%"}}>
-                 {loading ? "Updating":"Update"}
+                 {loading ? "Updating":<TbShoppingBagEdit />}
                 </button>
-                <button onDoubleClick={deleteCartItem} className="btn btn-danger btn-sn" style={{maxWidth:'50%'}}>Remove</button>
+                <button onDoubleClick={deleteCartItem} className="btn btn-danger btn-sn" style={{maxWidth:'50%'}}><MdRemoveShoppingCart /></button>
             </div>
         </div>
         {/* add more cart items here */}
