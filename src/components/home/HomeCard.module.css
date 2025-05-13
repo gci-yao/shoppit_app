@@ -1,75 +1,71 @@
-.col{
-    margin-bottom: 1rem;
-}
-.link{
-    text-decoration: none;
-    list-style: none;
+.col {
+  margin-bottom: 1rem;
 }
 
-.card{
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-    cursor: pointer;
+.link {
+  text-decoration: none;
+  list-style: none;
 }
-.cardImgWrapper {
-   width: 100%;
-   height: 100%; 
-   overflow: hidden;
-   border-top-left-radius: 8px;
-   border-top-right-radius: 8px;
-}
-.cardImgTop{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    list-style: none;
-    text-decoration: none;
-}
+
 .link:hover {
   text-decoration: none;
-}
-.cardBody{
-    text-align: center;
-    padding: 0.5rem;
-    
+  list-style: none;
 }
 
-.cardTitle{
-    font-size: 1rem;
-    color: #000;
-    margin-bottom: 0.25rem;
-    list-style: none;
-    text-decoration: none;
-}
-
-.cardText{
-    font-size: 0.9rem;
-    color:#0dda00;
-    list-style: none;
-    text-decoration: none;
+.card {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .cardImgWrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.cardImgTop {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  color: #0dda00;
 }
 
 .imageOverlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 1rem;
-  pointer-events: none; /* Permet de cliquer à travers l'overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: auto;
 }
 
 .cardImgWrapper:hover .imageOverlay {
@@ -81,12 +77,84 @@
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: center;
-  width: 100%;
+  color: white;
 }
 
-/* Assure que l'image remplit son conteneur */
-.cardImgTop {
-  width: 100%;
-  height: auto;
-  display: block;
+.ctaButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
+
+.ctaButton:hover {
+  background-color: #f0f0f0;
+}
+
+/* Modal overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal content */
+.modalContent {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+/* Close button */
+.closeButton {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}
+
+.fadeIn {
+  animation: fadeIn 0.3s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s forwards;
+}
+
+

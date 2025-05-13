@@ -4,12 +4,16 @@ import { Link} from 'react-router-dom'
 import styles from './NavBar.module.css'
 import NavBarLink from './NavBarLink'
 import { TfiLinux } from "react-icons/tfi";
+import { RiComputerFill } from "react-icons/ri";
+import { FaCartArrowDown } from "react-icons/fa";
+import { SiPrestashop } from "react-icons/si";
+
 
 const NavBar = ({numCartItems}) => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 ${styles.stickyNavbar}`}>
-    <div className="container " style={{marginRight:"20px"}} >
-        <Link className="navbar-brand text-decoration-none text-primary fw-bold text-uppercase" to="/">BAFA SHOPPIT</Link>
+    <div className="container " style={{marginRight:"45px"}} >
+        <Link className="navbar-brand text-decoration-none text-primary fw-bold text-uppercase" to="/"><SiPrestashop /> BAFA SHOPPIT</Link>
         <div className="collapse navbar-collapse" id="navbarContent">
           <NavBarLink />
         </div>
@@ -21,7 +25,7 @@ const NavBar = ({numCartItems}) => {
         aria-expanded="false"
         aria-label="Toggle navigation"
         >
-          <span className="navbar-toggle-icon"><TfiLinux /></span>
+          <span className="navbar-toggle-icon"><RiComputerFill /></span>
         </button>
         <Link to="/cart" className={`'btn btn-dark ms-5  rounded-pill position-relative ${styles.responsiveCart}'`}>
           {numCartItems == 0 || <span
@@ -30,7 +34,7 @@ const NavBar = ({numCartItems}) => {
           >
             {numCartItems}
           </span>}
-          <FaCartShopping />
+          <h5><FaCartArrowDown /></h5>
           
         </Link>
     </div>

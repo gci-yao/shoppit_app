@@ -3,6 +3,14 @@ import { useContext } from 'react'
 import {NavLink} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import { toast } from 'react-toastify'
+import { CiLogin } from "react-icons/ci";
+import { MdOutlineSaveAs } from "react-icons/md";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { SiKingstontechnology } from "react-icons/si";
+import { FaEllo } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
+
+
 
 const NavBarLink = () => {
 
@@ -28,7 +36,7 @@ const NavBarLink = () => {
                         isActive ? "nav-link text-success active fw-semibold" : "nav-link fw-semibold"
                     }end
                     >
-                        {`${username} logged`}
+                       <FaLocationDot /> {`${username} logged `}<FaEllo />
                     </NavLink>
                 </li>
                 <li className="nav-item" onClick={logout}>
@@ -38,7 +46,7 @@ const NavBarLink = () => {
                         isActive ? "nav-link active fw-semibold" : "nav-link fw-semibold"
                     }end
                     >
-                        Logout
+                        <RiLogoutCircleLine /> Logout
                     </NavLink>
                 </li>
             </> 
@@ -51,7 +59,7 @@ const NavBarLink = () => {
                         isActive ? "nav-link active  fw-semibold" : "nav-link fw-semibold"
                     }end
                     >
-                        Login
+                      <CiLogin />  Login
                     </NavLink>
                 </li>
                 <li className="nav-item">
@@ -61,7 +69,7 @@ const NavBarLink = () => {
                         isActive ? "nav-link active fw-semibold" : "nav-link fw-semibold"
                     }end
                     >
-                        Register
+                       <MdOutlineSaveAs />  Register
                     </NavLink>
                 </li>
             </>
