@@ -1,5 +1,6 @@
 import React from 'react';
 import video from '../../assets/bafa.mp4'; // adapte le chemin si nécessaire
+import bavi from '../../assets/bavi.mp4'; // adapte le chemin si nécessaire
 import image from "../../assets/shoppit.png"
 
 
@@ -75,7 +76,7 @@ const Header = () => {
                   zIndex: 1,
                 }}
               >
-                <source src={video} type="video/mp4" />
+                <source src={bavi} type="video/mp4" />
                 Votre navigateur ne supporte pas la vidéo HTML5.
               </video>
               {/* <img
