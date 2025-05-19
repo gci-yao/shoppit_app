@@ -31,7 +31,7 @@ const HomeCard = ({ product }) => {
               </div>
             </div>
             <div className={styles.tooltipMessage}>
-              {product.description || 'Aucune description.'}
+              {product.comments || 'Aucune description.'}
             </div>
             <div className={styles.tooltipArrow}></div>
           </div>
